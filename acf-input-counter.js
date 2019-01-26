@@ -22,41 +22,43 @@
          * (more investigations will be needed to check how it works with clone field or flexible content field)
          * 
          */
-        acf.fields.wysiwyg.initialize = function () {
-                // bail early if delay
-                if (this.$el.hasClass('delay'))
-                        return;
+        if (acf.fields.wysiwyg) {
+                acf.fields.wysiwyg.initialize = function () {
+                        // bail early if delay
+                        if (this.$el.hasClass('delay'))
+                                return;
 
 
-                // bail early if no tinyMCEPreInit (needed by both tinymce and quicktags)
-                if (typeof tinyMCEPreInit === 'undefined')
-                        return;
+                        // bail early if no tinyMCEPreInit (needed by both tinymce and quicktags)
+                        if (typeof tinyMCEPreInit === 'undefined')
+                                return;
 
 
-                // generate new id
-                var old_id = this.o.id,
-                        new_id = acf.get_uniqid('acf-editor-'),
-                        html = this.$el.outerHTML();
+                        // generate new id
+                        var old_id = this.o.id,
+                                new_id = acf.get_uniqid('acf-editor-'),
+                                html = this.$el.outerHTML();
 
 
-                // replace
-                html = acf.str_replace(old_id, new_id, html);
+                        // replace
+                        html = acf.str_replace(old_id, new_id, html);
 
-                /**
-                 * swapping of this.$el and change of this.o.id needs to be prevented to remove qTranslate contentHook for default acf wysiwyg field textarea
-                 * so we need to comment it out
-                 */
-                // swap
-                //this.$el.replaceWith(html);
-
-
-                // update id
-                //this.o.id = new_id
+                        /**
+                         * swapping of this.$el and change of this.o.id needs to be prevented to remove qTranslate contentHook for default acf wysiwyg field textarea
+                         * so we need to comment it out
+                         */
+                        // swap
+                        //this.$el.replaceWith(html);
 
 
-                // initialize
-                this.initialize_tinymce();
-                this.initialize_quicktags();
+                        // update id
+                        //this.o.id = new_id
+
+
+                        // initialize
+                        this.initialize_tinymce();
+                        this.initialize_quicktags();
+                }
         }
 
         // Remove content hooks from standard wysiwyg field
