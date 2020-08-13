@@ -2,14 +2,14 @@
 
 	/*
 		Plugin Name: ACF Input Counter
-		Plugin URI: https://github.com/Hube2/acf-input-counter/
+		Plugin URI: https://github.com/squarecandy/acf-input-counter/
 		Description: Show character count for limited text and textarea fields
-		Version: 1.4.0
+		Version: 1.4.1
 		Author: John A. Huebner II
 		Author URI: https://github.com/Hube2/
 		Text-domain: acf-counter
 		Domain-path: languages
-		GitHub Plugin URI: https://github.com/Hube2/acf-input-counter/
+		GitHub Plugin URI: https://github.com/squarecandy/acf-input-counter/
 		License: GPL
 	*/
 
